@@ -1,6 +1,7 @@
 package observer;
 
 import subject.Subject;
+import subject.WeatherData;
 import displayElement.DisplayElement;
 
 public class ForecastDisplay implements Observer, DisplayElement {
@@ -14,11 +15,14 @@ public class ForecastDisplay implements Observer, DisplayElement {
 	}
 
 	@Override
-	public void update(float temp, float humidity, float pressure) {
+	public void update(Subject data, Object arg) {
 		// TODO Auto-generated method stub
-        lastPressure = currentPressure;
-		currentPressure = pressure;
-		display();
+		if (data instanceof WeatherData) {
+			WeatherData weatherData = (WeatherData)data;
+	        lastPressure = currentPressure;
+			currentPressure = weatherData.getPressure();
+			display();
+		}
 	}
 
 	@Override

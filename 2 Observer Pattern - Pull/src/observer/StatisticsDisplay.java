@@ -1,6 +1,7 @@
 package observer;
 
 import subject.Subject;
+import subject.WeatherData;
 import displayElement.DisplayElement;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
@@ -16,19 +17,23 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 	}
 
 	@Override
-	public void update(float temp, float humidity, float pressure) {
+	public void update(Subject data, Object arg) {
 		// TODO Auto-generated method stub
-		tempSum += temp;
-		numReadings++;
-
-		if (temp > maxTemp) {
-			maxTemp = temp;
+		if (data instanceof WeatherData) {
+			WeatherData weatherData = (WeatherData)data;
+			float temp = weatherData.getTemperature();
+			tempSum += temp;
+			numReadings++;
+	
+			if (temp > maxTemp) {
+				maxTemp = temp;
+			}
+	 
+			if (temp < minTemp) {
+				minTemp = temp;
+			}
+			display();
 		}
- 
-		if (temp < minTemp) {
-			minTemp = temp;
-		}
-		display();
 	}
 
 	@Override
