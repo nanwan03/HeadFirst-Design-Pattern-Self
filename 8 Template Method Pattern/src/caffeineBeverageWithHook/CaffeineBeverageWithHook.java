@@ -1,7 +1,7 @@
 package caffeineBeverageWithHook;
 
 public abstract class CaffeineBeverageWithHook {
-	final void prepareRecipe() {
+	public final void prepareRecipe() {
 		boilWater();
 		brew();
 		pourInCup();
