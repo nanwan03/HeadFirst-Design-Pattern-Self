@@ -1,6 +1,6 @@
 package state;
 
-import gumballMachin.GumballMachine;
+import gumballMachine.GumballMachine;
 
 public class SoldState implements State {
 	GumballMachine gumballMachine;

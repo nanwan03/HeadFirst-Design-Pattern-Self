@@ -5,4 +5,4 @@
  * @author Administrator
  *
  */
-package gumballMachin;
+package gumballMachine;

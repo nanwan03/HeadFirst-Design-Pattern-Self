@@ -1,4 +1,4 @@
-package gumballMachin;
+package gumballMachine;
 
 import state.*;
 

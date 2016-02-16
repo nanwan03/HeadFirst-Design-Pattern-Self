@@ -1,4 +1,4 @@
-import gumballMachin.GumballMachine;
+import gumballMachine.GumballMachine;
 
 public class GumballMachineTestDrive {
 

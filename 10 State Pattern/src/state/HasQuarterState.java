@@ -1,6 +1,6 @@
 package state;
 
-import gumballMachin.GumballMachine;
+import gumballMachine.GumballMachine;
 
 import java.util.Random;
 
